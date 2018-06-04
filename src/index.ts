@@ -63,6 +63,7 @@ export interface IWindowSplitProvider extends IWindowSplitNavigator {
     getState(): SplitOrLeaf<IAugmentedSplitInfo>
 }
 
-export const WindowManager = WindowManager
+export default {
+    WindowManager,
+}
 
-export const windowManager = new WindowManager()
