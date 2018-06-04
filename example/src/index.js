@@ -11,10 +11,13 @@ const splitForegroundColor = "#DCDCDC"
 
 document.body.style.backgroundColor = backgroundColor
 
-const createWindowSplitObject = (text) => {
+const createWindowSplitObject = (text, closeFunc) => {
 
     const render = () => {
-        return <div style={{backgroundColor: splitBackgroundColor, color: splitForegroundColor, height: "100%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>{text}</div>
+        return <div style={{backgroundColor: splitBackgroundColor, color: splitForegroundColor, height: "100%", width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+            <div>{text}</div>
+            <a onClick={closeFunc}>close</a>
+            </div>
     }
 
     return {
@@ -26,15 +29,22 @@ const wm = new WindowManager()
 const elem = <WindowSplitsView windowManager={wm} />
 let splitIndex = 0
 
-const addHorizontalSplit = () => {
+const addSplit = (verticalOrHorizontal) => {
+
+    let handle = null
+
+    const close = () => {
+        if (handle) {
+            handle.close()
+        }
+    }
+
     splitIndex++
-    wm.createSplit("horizontal", createWindowSplitObject("Split" + splitIndex.toString()))
+    handle = wm.createSplit(verticalOrHorizontal, createWindowSplitObject("Split" + splitIndex.toString(), close))
 }
 
-const addVerticalSplit = () => {
-    splitIndex++
-    wm.createSplit("vertical", createWindowSplitObject("Split" + splitIndex.toString()))
-}
+const addHorizontalSplit = () => addSplit("horizontal")
+const addVerticalSplit = () => addSplit("vertical")
 
 addHorizontalSplit()
 
