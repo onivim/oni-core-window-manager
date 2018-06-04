@@ -24,9 +24,28 @@ const createWindowSplitObject = (text) => {
 
 const wm = new WindowManager()
 const elem = <WindowSplitsView windowManager={wm} />
+let splitIndex = 0
 
-const split1 = wm.createSplit("horizontal", createWindowSplitObject("test1"))
-const split2 = wm.createSplit("vertical", createWindowSplitObject("test2"))
-const split3 = wm.createSplit("horizontal", createWindowSplitObject("test3"), split2) 
+const addHorizontalSplit = () => {
+    splitIndex++
+    wm.createSplit("horizontal", createWindowSplitObject("Split" + splitIndex.toString()))
+}
 
-ReactDOM.render(elem, document.getElementById('root'));
+const addVerticalSplit = () => {
+    splitIndex++
+    wm.createSplit("vertical", createWindowSplitObject("Split" + splitIndex.toString()))
+}
+
+addHorizontalSplit()
+
+const Button = (props) => <button onClick={props.onClick}>{props.children}</button>
+
+const Host = <div style={{display: "flex", flexDirection: "column", width: "100%", height: "100%"}}>
+                    {elem}
+                    <div style={{flex: "0 0 auto", height: "50px"}}>
+                        <Button onClick={() => addVerticalSplit()}>add vertical split</Button>
+                        <Button onClick={() => addHorizontalSplit()}>add horizontal split</Button>
+                    </div>
+                  </div>
+
+ReactDOM.render(Host, document.getElementById('root'));
