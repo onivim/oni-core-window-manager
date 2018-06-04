@@ -12,12 +12,7 @@ import { WindowSplitHost } from "./WindowSplitHost"
 
 import {
     IAugmentedSplitInfo,
-    ISplitInfo,
-    layoutFromSplitInfo,
-    leftDockSelector,
-    WindowManager,
-    WindowState,
-} from "./../index"
+} from "./../WindowManagerStore"
 
 const noop = () => { }
 

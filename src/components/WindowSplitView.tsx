@@ -12,12 +12,13 @@ import * as Oni from "oni-api"
 
 import { WindowSplitHost } from "./WindowSplitHost"
 
+import { layoutFromSplitInfo } from "./../layoutFromSplitInfo"
+import { WindowManager } from "./../WindowManager"
+
 import {
     IAugmentedSplitInfo,
     ISplitInfo,
-    layoutFromSplitInfo,
-    WindowManager,
-} from "./../index"
+} from "./../WindowManagerStore"
 
 export interface WindowSplitViewProps {
     activeSplitId: string

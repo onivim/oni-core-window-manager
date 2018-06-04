@@ -9,7 +9,7 @@ import * as Oni from "oni-api"
 import { Reducer, Store, AnyAction } from "redux"
 import { createStore as createReduxStore } from "oni-core-redux"
 
-import { Direction, ISplitInfo, SplitDirection } from "./index"
+import { Direction, SplitDirection } from "./Types"
 
 export interface IAugmentedSplitInfo extends Oni.IWindowSplit {
     // Internal bookkeeping

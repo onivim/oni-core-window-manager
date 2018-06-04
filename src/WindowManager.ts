@@ -13,7 +13,7 @@ import { Store } from "redux"
 import * as Oni from "oni-api"
 import { Event, IEvent } from "oni-types"
 
-import { Direction, SplitDirection } from "./index"
+import { Direction, SplitDirection } from "./Types"
 import { LinearSplitProvider } from "./LinearSplitProvider"
 import { RelationalSplitNavigator } from "./RelationalSplitNavigator"
 import { WindowDockNavigator } from "./WindowDock"

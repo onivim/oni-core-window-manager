@@ -6,11 +6,14 @@
 
 import {
     Direction,
-    IAugmentedSplitInfo,
-    IWindowSplitProvider,
     SplitDirection,
+    IWindowSplitProvider,
+} from "./Types"
+
+import {
+    IAugmentedSplitInfo,
     SplitOrLeaf,
-} from "./index"
+} from "./WindowManagerStore"
 
 export class SingleSplitProvider implements IWindowSplitProvider {
     constructor(private _split: IAugmentedSplitInfo) {}

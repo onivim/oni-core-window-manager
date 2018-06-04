@@ -2,7 +2,8 @@
  * WindowDock.ts
  */
 
-import { Direction, IAugmentedSplitInfo, IWindowSplitNavigator } from "./index"
+import { Direction, IWindowSplitNavigator } from "./Types"
+import { IAugmentedSplitInfo } from "./WindowManagerStore"
 
 export type DockStateGetter = () => IAugmentedSplitInfo[]
 
