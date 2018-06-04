@@ -36,6 +36,14 @@ const fullVerticalStyle: React.CSSProperties = {
     flex: "1 1 auto",
 }
 
+const absolutePosition: React.CSSProperties = {
+    position: "absolute",
+    top: "0px",
+    left: "0px",
+    right: "0px",
+    bottom: "0px",
+}
+
 /**
  * Component responsible for rendering an individual window split
  */
@@ -80,7 +88,7 @@ export class WindowSplitHost extends React.PureComponent<
                 style={fullVerticalStyle}
                 onClick={evt => (!this.props.isFocused ? this.props.onClick(evt) : null)}
             >
-                <div className={className}>{this.props.split.render()}</div>
+                <div className={className} style={absolutePosition}>{this.props.split.render()}</div>
             </div>
         )
     }

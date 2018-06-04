@@ -49,14 +49,12 @@ class RootSplitView extends React.PureComponent<RootSplitViewProps, {}> {
 
         return (
             <div style={containerStyle}>
-                <div className="container horizontal full">
-                    <Dock splits={this.props.leftDock} activeSplitId={this.props.activeSplitId} />
-                    <WindowSplitView
-                        split={this.props.splitRoot}
-                        windowManager={this.props.windowManager}
-                        activeSplitId={this.props.activeSplitId}
-                    />
-                </div>
+                <Dock splits={this.props.leftDock} activeSplitId={this.props.activeSplitId} />
+                <WindowSplitView
+                    split={this.props.splitRoot}
+                    windowManager={this.props.windowManager}
+                    activeSplitId={this.props.activeSplitId}
+                />
             </div>
         )
     }
