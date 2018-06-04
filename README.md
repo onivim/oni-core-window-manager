@@ -17,7 +17,7 @@ React-based window split management, used by Oni.
 ```
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import { WindowManager, WindowManagerView } from "oni-core-window-manager"
+import { WindowManager, WindowSplitsView } from "oni-core-window-manager"
 
 const myTestWindow = (message) {
     render: () => <div>{message}</div>
@@ -33,7 +33,7 @@ split3.focus()
 
 windowManager.move("up")
 
-ReactDOM.render(<WindowManagerView manager={windowManager} />, document.body)
+ReactDOM.render(<WindowSplitsView manager={windowManager} />, document.body)
 ```
 
 ## License
