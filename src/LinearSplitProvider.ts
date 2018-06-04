@@ -1,28 +1,13 @@
 /**
- * TreeSplitProvider.ts
+ * LinearSplitProvider.ts
  *
  * Composite split provider responsible for managing
  * a tree-based hierarchy of horizontal and vertical splits
  */
 
-import {
-    Direction,
-    IAugmentedSplitInfo,
-    ISplitInfo,
-    IWindowSplitProvider,
-    SingleSplitProvider,
-    SplitDirection,
-} from "./index"
-
-export const getInverseDirection = (splitDirection: SplitDirection): SplitDirection => {
-    switch (splitDirection) {
-        case "horizontal":
-            return "vertical"
-        case "vertical":
-        default:
-            return "horizontal"
-    }
-}
+import { getInverseSplitDirection, Direction, SplitDirection, IWindowSplitProvider } from "./Types"
+import { SingleSplitProvider } from "./SingleSplitProvider"
+import { ISplitInfo, IAugmentedSplitInfo } from "./WindowManagerStore"
 
 export class LinearSplitProvider implements IWindowSplitProvider {
     constructor(
@@ -59,7 +44,7 @@ export class LinearSplitProvider implements IWindowSplitProvider {
     ): boolean {
         // If there are no children, we can just match direction
         if (this._splitProviders.length === 0) {
-            this._direction = getInverseDirection(direction)
+            this._direction = getInverseSplitDirection(direction)
             this._splitProviders.push(new SingleSplitProvider(split))
             return true
         }
@@ -100,7 +85,7 @@ export class LinearSplitProvider implements IWindowSplitProvider {
 
             const children = [containingSplit, new SingleSplitProvider(split)]
             const childSplitProvider = new LinearSplitProvider(
-                getInverseDirection(this._direction),
+                getInverseSplitDirection(this._direction),
                 children,
             )
 

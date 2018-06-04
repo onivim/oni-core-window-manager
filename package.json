@@ -50,6 +50,8 @@
     "oni-core-logging": "^1.0.0",
     "oni-core-redux": "^1.0.0",
     "oni-types": "^0.0.8",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
     "react-virtualized": "^9.19.1",
     "redux": "^4.0.0",

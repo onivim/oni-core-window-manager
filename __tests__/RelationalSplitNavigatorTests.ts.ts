@@ -4,10 +4,8 @@
 
 import * as assert from "assert"
 
-import {
-    RelationalSplitNavigator,
-    SingleSplitProvider,
-} from "./../src"
+import { RelationalSplitNavigator } from "./../src/RelationalSplitNavigator"
+import { SingleSplitProvider } from "./../src/SingleSplitProvider"
 
 import { MockWindowSplit } from "./../mocks"
 

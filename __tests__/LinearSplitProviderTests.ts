@@ -4,7 +4,8 @@
 
 import * as assert from "assert"
 
-import { ISplitInfo, ISplitLeaf, LinearSplitProvider } from "./../src"
+import { ISplitInfo, ISplitLeaf } from "./../src/WindowManagerStore"
+import { LinearSplitProvider } from "./../src/LinearSplitProvider"
 
 import { MockWindowSplit } from "./../mocks"
 

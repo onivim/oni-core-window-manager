@@ -5,7 +5,8 @@
 import * as assert from "assert"
 import * as Oni from "oni-api"
 
-import { ISplitInfo, layoutFromSplitInfo } from "./../src"
+import { ISplitInfo } from "./../src/Types"
+import { layoutFromSplitInfo } from "./../src/layoutFromSplitInfo"
 
 import { MockWindowSplit } from "./../mocks"
 

@@ -1,11 +1,12 @@
 /**
- * RelationalSplitProvider.ts
+ * RelationalSplitNavigator.ts
  *
  * Composite split provider responsible for managing
  * navigation relationships between other split provdiers
  */
 
-import { Direction, getInverseDirection, IAugmentedSplitInfo, IWindowSplitNavigator } from "./index"
+import { Direction, getInverseDirection, IWindowSplitNavigator } from "./Types"
+import { IAugmentedSplitInfo } from "./WindowManagerStore"
 
 export interface WindowSplitRelationship {
     from: IWindowSplitNavigator

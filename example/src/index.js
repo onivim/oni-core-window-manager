@@ -1,4 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<div>Hello</div>, document.getElementById('root'));
+import {WindowManager, WindowSplitView }from "oni-core-window-manager"
+
+const wm = new WindowManager()
+
+ReactDOM.render(<WindowSplitView windowManager={wm} />, document.getElementById('root'));
