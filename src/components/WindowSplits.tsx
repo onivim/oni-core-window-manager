@@ -21,6 +21,8 @@ import {
     WindowState,
 } from "./../index"
 
+import { Dock } from "./Dock"
+
 export interface IWindowSplitsProps extends IWindowSplitsContainerProps {
     activeSplitId: string
     splitRoot: ISplitInfo<IAugmentedSplitInfo>

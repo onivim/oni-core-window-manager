@@ -40,9 +40,6 @@ export class WindowSplitHost extends React.PureComponent<
         this.state = {
             errorInfo: null,
         }
-
-        // Error
-        // React.ErrorInfo
     }
 
     public componentDidCatch(error: Error, info: React.ErrorInfo): void {
