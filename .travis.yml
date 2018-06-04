@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+- '9'
+install:
+- npm install
+script:
+- npm run build
+deploy:
+  provider: npm
+  email: bryphe@outlook.com
+  skip_cleanup: true
+  api_key:
+    secure: dRXz8n5SBffWqhtMvjhOyrxzj3VfkXuCAQYkh/oUZclQKeWrBp4DfRS1TcJfqhtOD47JYY0GUiXjtd476hnwjwj4L1mDuNrwcMaBQGRwL8TKwW565BxGbFwCMTwgbnvQnNzbQjjW/AgRtupVxEka9UNnWjp21o9l4BoSbHCOzPG5bylWuAtApA0kxM5ed2rHGOnEo/Yzajg6nInSK9Ol7V4A83IM/EuQSCastJZCzGT2u5V22C0+/7bANpp+syTSnEm9OssVibH8ru2U9I/CEOxFcMe2uxxBEnuA87mGXAwdTOJdyz52WN/KDsZCput9ItwT6KcrBBlmU1FAGs9YCLjHMeWkmU2Eip+8W5d8o5Nx7PRU9vVtnxCP/z48ySrFtVk4AFWSYRWrNS2yEHdINFCh8UysQ2ZxHVa0ZBem06UchYVB4BrHuv1MUlWnwncyzDzz+KAclcRYzvPC8FB+kWp6JKGevQKCSsOwgDqd+eTS9BZN6rN8k/zrX984u+oAe8Mh67/8RXe9Rbc+3S7bOZyAhvQYS40ARHYwDv0iipj6KT+frqk2T0Zmh1PFLz+0Ht9J89AKjRGMbarLn5tzC1r6voyMGtpeipDV00yVqEFddM1uQI77Tn/cpTGaHhbhUM01xC0N8jni/H/5bpvmkPA6YK74iZiqOpb7Xyqok1U=
+  on:
+    repo: onivim/oni-core-logging
