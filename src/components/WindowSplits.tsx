@@ -67,7 +67,6 @@ export class WindowSplitView extends React.PureComponent<IWindowSplitViewProps, 
             <div className={className}>
                 <AutoSizer>
                     {({ height, width }) => {
-                        // return <div>{width}{height}</div>
                         const items = layoutFromSplitInfo(this.props.split, width, height)
                         const vals: JSX.Element[] = Object.values(items).map(item => {
                             const style = rectangleToStyleProperties(item.rectangle, height)
