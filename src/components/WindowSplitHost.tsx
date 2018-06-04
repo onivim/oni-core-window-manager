@@ -8,7 +8,7 @@ import * as React from "react"
 
 import * as Oni from "oni-api"
 
-import { ErrorScreenView } from "./../ErrorScreen"
+import { ErrorScreenView } from "./ErrorScreen"
 
 export interface IWindowSplitHostProps {
     split: Oni.IWindowSplit
@@ -58,7 +58,7 @@ export class WindowSplitHost extends React.PureComponent<
         if (this.state.errorInfo) {
             return (
                 <div className="container vertical full">
-                    <RedErrorScreenView
+                    <ErrorScreenView
                         error={this.state.errorInfo.error}
                         info={this.state.errorInfo.info}
                     />
